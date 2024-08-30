@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recordatorio de Citas</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px; /* Espacio entre los elementos */
+        }
+        .form-container, .image-container {
+            flex: 1;
+            min-width: 280px;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .image-container img {
+            max-width: 80%; /* Reduce el tamaño de la imagen */
+            height: auto;
+            border-radius: 10px;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 150px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #007bff;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input, textarea {
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        input:focus, textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        button {
+            padding: 12px;
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        p {
+            text-align: center;
+            color: #555;
+        }
+        /* Media query para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .image-container {
+                order: -1; /* Mueve la imagen arriba en pantallas pequeñas */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <img src="src/logo.png" alt="Logo" class="logo">
+            <h1>Recordatorio de Citas</h1>
+            <p>Ingresa los detalles de tu cita a continuación.</p>
+            <form action="confirmacion.html" method="get">
+                <label for="titulo">Título de la Cita:</label>
+                <input type="text" id="titulo" name="titulo" required>
+
+                <label for="fecha">Fecha y Hora:</label>
+                <input type="datetime-local" id="fecha" name="fecha" required>
+
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" rows="4"></textarea>
+
+                <button type="submit">Guardar Cita</button>
+            </form>
+            <p style="text-align: center; margin-top: 20px;">
+                <a href="peticiones.html" style="color: #007bff; text-decoration: none;">¿Tienes alguna petición? Haz clic aquí</a>
+            </p>
+        </div>
+        <div class="image-container">
+            <img src="src/imagen-decorativa.png" alt="Imagen Decorativa">
+        </div>
+    </div>
+</body>
+</html>
